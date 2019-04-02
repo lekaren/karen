@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+
+ <script>
+
+// 아이디 중복 확인
+    function idcheck(){
+         var id = document.getElementById("id").value;
+         var length = id.length;
+        
+        if(length < 3 || length==""){
+             alert("사용할 수 없는 아이디입니다.");
+             document.getElementById("id").focus();
+        }else{
+             alert("사용할 수 있습니다.");
+        }
+       }
+
+// 비밀번호 일치 확인
+    function checkpw(){
+         var pw = document.getElementById("pw").value;
+         var pwck = document.getElementById("pwck").value;
+
+        if (pw != pwck || (pw.length < 4)){
+             alert("비밀번호가 일치하지 않습니다. 다시 입력해 주세요.");
+             document.getElementById("pwck").focus();
+        }else{
+             alert("확인되었습니다.")
+        }
+       }
+
+// 전체 확인(+비밀번호 일치 확인 버튼 눌렀는지 확인할 수 있게 하는 거?)        
+    function check() {
+
+// 아이디 입력 유무 체크           
+         var id = document.getElementById("id");
+
+        if(id.value=="" || !(id.value.length >= 3)){
+             alert("아이디를 3자 이상 입력하세요.");
+             id.focus();
+             return;
+        }
+
+// 비밀번호 입력 유무 체크
+         var pw = document.getElementById("pw");
+         var pwck = document.getElementById("pwck");
+
+        if(pw.value=="" || !(pw.value.length >= 4)){
+             alert("비밀번호를 입력하세요.");
+             pw.focus();
+             return;
+        }
+     
+        else if(pwck.value==""){
+             alert("비밀번호 확인을 입력하세요.");
+             pwck.focus();
+             return;
+        }
+
+// 이름 입력 유무 체크
+        else if(document.getElementById("name").value==""){
+             alert("이름을 입력하세요.");
+             document.getElementById("name").focus();
+             return;      
+        }
+        
+// 이메일 입력 유무 체크(+주소 추가하기)
+        else if(document.getElementById("email").value==""){
+             alert("이메일을 입력하세요.");
+             document.getElementById("email").focus();
+             return;
+        }
+       }
+ </script>
+
+</head>
+
+<body>
+
+아이디 : <input type="text" id="id" name="id" value="">
+<button onclick="idcheck()">아이디 확인</button><br/>
+
+비밀번호 : <input type="password" id="pw" name="pw" value=""><font color= ff0000; size=1px;> *숫자 4자리 이상</font><br/> 
+비밀번호 확인 : <input type="password" id="pwck" name="pwck" value="">
+<button onclick="checkpw()">비밀번호 확인</button><br/>
+
+이름 : <input type="text" id="name" name="name" value=""><br/>
+
+이메일 : <input type="text" id="email" name="email" value=""><br/>
+
+<button onclick="check()">확인</button>
+
+</body>
+</html>

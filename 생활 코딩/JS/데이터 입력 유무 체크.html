@@ -1,0 +1,35 @@
+function checkForm() {
+    var userId = document.fmField.uerId;
+    // 아이디 입력 유무 체크
+    if(userId.value == '' || !(userId.value.length >= 3 && userId.value.length <= 12)) {
+        window.alert("아이디를 입력하시오");
+        document.fmField.uerId.focus();
+        document.getElementById('userId').select();
+        return false; // 아이디 입력이 안되어 있다면 submint 이벤트를 중지
+    }
+    var uerPw = document.getElementById('userPw');
+    // 암호 입력 유무 체크
+    if(document.fmField.userPw.value == ''){
+        alert('암호를 입력하세요.');
+        userPw.focus();
+        return false;
+    }
+}
+ function tocheckpw1() {
+                
+                var pw = document.getElementById("pw").value;        
+                var pwck = document.getElementById("pwck").value;
+         
+                if (pw != pwck) {
+                    alert("비밀번호가 틀렸습니다. 다시 입력해 주세요");
+                }else {
+                    alert("확인되었습니다.")
+                }
+              }
+
+ var pw = document.getElementById("pw").value;{
+        
+                if (length < 4){
+                    alert("비밀번호는 4자 이상 입력해 주십시오.");
+                    }
+              }

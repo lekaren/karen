@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+
+    <style type="text/css">
+    /* 이름에 마우스 갖다대면 색 바뀌는 스타일 */
+        a:link { color: black; text-decoration: none;}
+        a:visited { color: black; text-decoration: none;}
+        a:hover { color:palevioletred;}
+
+    /* 바탕 색 바꾸는 거 */
+    tr:nth-child(even){
+      background-color: blanchedalmond;
+    }
+
+    /* 글씨 가운데 정렬 */
+    th,td{
+      text-align: center;
+      height:50px;
+    }
+
+    th {
+      background-color:darksalmon;
+    }
+    
+    /* 표 크기 */
+    table{
+      width: 40%;
+      height: 100%;
+      border-collapse: collapse;
+    }
+    </style>
+
+
+    <script type="text/javascript">
+
+    // 김우빈 팝업창
+    function popupOpen(){
+	var popUrl = "detail.html";	//팝업창에 출력될 페이지 URL
+	var popOption = "width=370, height=450, resizable=no, scrollbars=no, status=no;";    //팝업창 옵션(optoin)
+		window.open(popUrl,"",popOption);
+    }
+
+    // 문서준 팝업창
+    function popupOpen1(){
+	var popUrl = "detail1.html";
+	var popOption = "width=370, height=450, resizable=no, scrollbars=no, status=no;";
+		window.open(popUrl,"",popOption);
+    }
+
+    // 김현준 팝업창
+    function popupOpen2(){
+	var popUrl = "detail2.html";
+	var popOption = "width=370, height=450, resizable=no, scrollbars=no, status=no;";
+		window.open(popUrl,"",popOption);
+    }
+    // 박수진 팝업창
+    function popupOpen3(){
+	var popUrl = "detail3.html";
+	var popOption = "width=370, height=450, resizable=no, scrollbars=no, status=no;";
+		window.open(popUrl,"",popOption);
+    }
+
+    // 이다빈 팝업창
+    function popupOpen4(){
+	var popUrl = "detail4.html";
+	var popOption = "width=370, height=450, resizable=no, scrollbars=no, status=no;";
+		window.open(popUrl,"",popOption);
+    }
+
+</script>
+</head>
+<body>
+    <center>
+    <h1>Introduce</h1>
+ <table>
+    <table border="1">
+
+    <tr>
+    <th>생일</th>
+    <th>이름</th>
+    <th>영어 이름</th>
+    <th>성별</th>
+    </tr>
+
+    <tr>
+    <td>03/12</td>
+    <td><a href="javascript:popupOpen();">김우빈</a></td>
+    <td>Chobby</td>
+    <td>男</td>
+    </tr>
+
+    <tr>
+    <td>05/23</td>
+    <td><a href="javascript:popupOpen1();">문서준</a></td>
+    <td>Irving</td>
+    <td>男</td>
+    </tr>
+
+    <tr>
+    <td>08/13</td>
+    <td><a href="javascript:popupOpen2();">김현준</a></td>
+    <td>Kali</td>
+    <td>男</td>
+    </tr> 
+
+    <tr>
+    <td>10/22</td>
+    <td><a href="javascript:popupOpen3();">박수진</a></td>
+    <td>Sunny</td>
+    <td>女</td>
+    </tr>
+
+    <tr>
+    <td>12/10</td>
+    <td><a href="javascript:popupOpen4();">이다빈</a></td>
+    <td>Karen</td>
+    <td>女</td>
+    </tr>
+
+ </table>
+</center>
+</body>
+</html>

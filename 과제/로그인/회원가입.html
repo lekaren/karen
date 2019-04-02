@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+
+ <HEAD>
+    <title> 회원가입 </title>
+    <META NAME="Generator" CONTENT="Editplus">
+    <META NAME="Author" CONTENT="">
+    <META NAME="Keywords" CONTENT="">
+    <META NAME="Desription" CONTENT="">
+
+
+   
+   <style>
+    
+    
+    tr, td{
+        border: 2px solid #000000;
+    }
+
+   
+    #main-title {
+    color:#ffffff;
+    font-size:15pt;
+    font-weight:bold;
+    }
+
+    #sub-title {
+    color:#ffffff;
+    font-size:10pt;
+    font-weight:bold;
+    }
+
+            .se {font-family: serif;}
+            .sa {font-family: sans-serif;}
+            .cu {font-family: cursive;}
+            .fa {font-family: fantasy;}
+            .mo {font-family: monospace;}
+
+    </style>
+
+<script>
+
+
+    function check1(){
+        var frm=document.enroll;
+        frm.checkid.value=1;
+    }
+
+    function enter(){
+
+    var frm=document.enroll;
+
+    if(frm.id.value.length<3){
+      alert("아이디는 3자 이상 입력해 주세요.");
+      return;
+    }
+
+    if(frm.pwd.value.length<4){
+     alert("비밀번호는 4자 이상 입력해 주세요.");
+     return;
+    }
+
+    if(frm.pwd1.value!=frm.pwd.value){
+      alert("비밀번호가 다릅니다.");
+      return;
+    }
+
+    if(frm.name.value.length<1){
+      alert("이름을 입력해 주세요.");
+      return;
+    }
+
+     if(frm.sex.value==""){
+       alert("성별을 선택해 주세요.");
+       return;
+    }
+
+    if(frm.email.value.length<1 || frm.e_domain.value.length<1){
+      alert("이메일을 입력해 주세요.");
+      return;
+    }
+
+    frm.method="get";
+    frm.action="./3.login.html";
+    frm.submit();
+    }
+
+    function checkid(){
+
+        var frm=document.enroll;
+
+        var regExp=/^([/\w/g\.-]+)@([\da-z/.-]+)\.([a-z\.]{2,6})$/;
+
+
+        if(!regExp.test(frm.email.value)){
+
+            alert('올바른 email을 입력해 주세요.');
+
+            frm.email.focus();
+
+        }
+
+    }
+
+    function domainCheck(){
+
+        var frm=document.enroll;
+
+        if(frm.domain.value==0){
+            frm.e_domain.value="";
+            frm.e_domain.disabled=false;
+        
+        }else{
+            frm.e_domain.value=frm.domain.value;
+            frm.e_domain.disabled=true;
+        }
+    }
+</script>
+ </HEAD>
+
+
+<BODY bgcolor="#ffffff">
+    <form name="enrool" method="post">
+<table height="90" align="center" style="background-color:#ffffff;">
+
+    <div id="main-title" class="mo" align="center"><font color=#000000;>회원가입</font></div>
+    <div id="sub-title" class="mo" align="center"><font color=#32cd32;>*정확한 회원정보를 입력하여 주십시오.</font></div>
+
+<table width="550" height="500" align="center" style="background-color:#FFFFFF;"  class="mo">
+		
+        <tr>
+            <td>
+                <table align="center" width="800" height="550">
+        <tr>			
+
+            <td style="text-align:center">아이디</td>
+            <td style="color:red; font-size:10px;"><input type="text" name="id" value=""> 
+            최소 3자 이상 입력하세요.</td>
+        </tr>
+        <tr>
+            <td style="text-align:center;">비밀번호</td> 
+            <td ><input type="password" name="pwd" value=""><height="25px" align="center"></td>
+        </tr>
+        <tr>
+            <td style="text-align:center;">비밀번호 확인</td> 
+            <td><input type="password" name="pwd1" value=""> <height="23px" align="center"></td>
+        </tr>
+        <td style="text-align: center;">비밀번호 확인 질문</td>
+        <td><select id="hint" name="hint" fw-filter="isFill" fw-label="hint" fw-msg="" >
+        <option value="hint_01">가장 소중한 물건은?</option>
+        <option value="hint_02">다시 태어나면 되고 싶은 것은?</option>
+        <option value="hint_03">자신의 별명은?</option>
+        <option value="hint_04">받았던 선물 중 가장 기억에 남는 선물은?</option>
+        </select></td>
+            </tr>
+         <tr>
+            <td style="text-align:center;">비밀번호 확인 답변</td>
+              <td><input id="hint_answer" name="hint_answer" fw-filter="isFill" fw-label="비밀번호 확인시 답변" fw-msg="" class="inputTypeText" placeholder="" value="" type="text"  /></td>
+         </tr>
+        <tr>
+            <td style="text-align:center;">이름</td> 
+            <td style="color:red; font-size:10px;"><input type="name" name="name" value=""> (공백없이 한글만 입력 가능)</td>
+        </tr>
+        <td style="text-align: center;">생년월일</td>
+        <td><input id="birth_year" name="birth_year" fw-filter="" fw-label="생년월일" fw-msg="" class="inputTypeText" placeholder="" maxlength="4" value="" type="text"  /> 년 <input id="birth_month" name="birth_month" fw-filter="" fw-label="생년월일" fw-msg="" class="inputTypeText" placeholder="" maxlength="2" value="" type="text"  /> 월 <input id="birth_day" name="birth_day" fw-filter="" fw-label="생년월일" fw-msg="" class="inputTypeText" placeholder="" maxlength="2" value="" type="text"  /> 일 <span class="birth "><input id="is_solar_calendar0" name="is_solar_calendar" fw-filter="" fw-label="생년월일" fw-msg="" value="T" type="radio" checked="checked"  /><label for="is_solar_calendar0" >양력</label>
+        <input id="is_solar_calendar1" name="is_solar_calendar" fw-filter="" fw-label="생년월일" fw-msg="" value="F" type="radio"  /><label for="is_solar_calendar1" >음력</label></span>
+        </td>
+        <tr>
+            <td style="text-align:center;">닉네임</td> 
+            <td><input type="text" name="ad" value="" ></td>
+        </tr>
+        <tr>
+            <td style="text-align:center;">성별</td> <td><input type="radio" name="sex" value="1"> 여자
+            <input type="radio" name="sex" value="2"> 남자</td>
+        </tr>
+       
+        <tr>
+            <td style="text-align:center;">주소</td> 
+            <td><input type="text" name="ad" value="" style="width:300"></td>
+        </tr>
+      
+        <tr>
+            <td colspan="2" style="color:blue"> * 원하시는 서비스에 체크해 주세요.</td>
+        </tr>
+
+        <tr>
+            <td style="text-align:center;">E-mail</td>
+            <td><input type="text" name="email" style="width:80" onblur="checkid()"> @
+            <input type="text" name="e_domain" style="width:80">
+            <select name="domain" onchange="domainCheck();">
+            <option value ="0" selected="selected">직접입력</option>
+            <option value ="naver.com" >naver.com</option>
+            <option value ="hanmail.net">hanmail.net</option>
+            <option value ="nate.com">nate.com</option> 
+            <option value ="yahoo.com">yahoo.com</option>   </select></td></tr>
+        <tr>
+            <td style="text-align:center;">이메일 수신 여부</td>
+            <td><input type="checkbox" name="check" value="check1">동의함<br>이벤트 소식을 이메일로 받으실 수 있습니다.</td>
+        </tr>
+        
+        <tr>
+                <td style="text-align:center;">연락처</td> 
+                <td><select name="phone">
+                <option value ="010" selected="selected">010</option>
+                <option value ="011">011</option>
+                <option value ="016">016</option> 
+                <option value ="017">017</option>
+                </select>
+                - <input type="text" name="phone1" value="" style="width:70">
+                - <input type="text" name="phone2" value="" style="width:70"></td>
+            </tr>
+
+        <tr>
+            <td style="text-align:center;">SNS 수신 여부</td>
+            <td><input type="checkbox" name="check" value="check2">동의함<br>이벤트 소식을 SNS로 받으실 수 있습니다.</td>
+        </tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+    <br>
+    <table align="center" style="background-color:#ffffff;">
+    <tr>
+     <td><a href="./3.login.html"><input type="button" value="  가입  " style="background-color:#000000; border:solid 10px #000000; color:#ffffff;" onclick="javascript:'enter()'"></a>
+       <td><a href="./로그인.html"><input type="button" value="  취소  " style="background-color:#000000; border:solid 10px #000000; color:white;"></a>
+       </td>
+    </tr>
+    </form> 
+ </BODY>
+</HTML>
